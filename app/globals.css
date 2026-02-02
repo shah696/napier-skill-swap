@@ -1,26 +1,33 @@
 @import "tailwindcss";
 
 :root {
+  /* Semantic Brand Colors - Option A: Modern Trust */
+  --primary: #2563eb; /* Royal Blue */
+  --primary-hover: #1d4ed8;
+  --secondary: #1e293b; /* Slate Dark */
+  --accent: #0f766e; /* Teal - Retained for safety/trust indicators */
+  --background-soft: #f8fafc; /* Slate 50 */
+  --card-bg: #ffffff;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* Slate 900 */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-background-soft: var(--background-soft);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background-soft);
+  color: var(--secondary);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
