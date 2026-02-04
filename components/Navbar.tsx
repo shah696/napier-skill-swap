@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import logo from "./assets/logo.jpeg";
+
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Menu, X, User, MessageSquare, LogOut, PlusCircle } from "lucide-react";
+import { Menu, X, MessageSquare, LogOut, PlusCircle } from "lucide-react";
 
 interface NavbarProps {
   isLoggedIn?: boolean;
@@ -16,33 +18,27 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItemClass = (path: string) =>
-    `relative font-medium transition-colors
-   ${pathname === path ? "text-black font-extrabold " : "text-gray-600 hover:text-black"}
- 
-   ${pathname === path ? "after:scale-x-100" : ""}`;
-
-  //    after:absolute after:left-0 after:-bottom-1
-  //  after:h-[2px] after:w-full
-  //  after:bg-black
-  //  after:origin-left after:scale-x-0
-  //  after:transition-transform after:duration-300
-  //  hover:after:scale-x-100
+    `font-medium text-sm transition-colors duration-200 ${
+      pathname === path
+        ? "text-white border-b-2 border-white pb-1"
+        : "text-gray-300 hover:text-gray-400"
+    }`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-15">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
-              src="https://www.napier.ac.uk/theme/assets/img/design/small-Logo.jpg"
-              // src="./assets/logo.png"
+              src={logo.src}
               alt="Edinburgh Napier University"
+              className="h-15 w-auto"
             />
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <Link href="/" className={navItemClass("/")}>
               Home
             </Link>
@@ -60,14 +56,14 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
                 <div className="flex items-center space-x-4 ml-4">
                   <Link
                     href="/login"
-                    className="text-[--secondary] hover:text-[--primary] font-medium transition-colors"
+                    className="text-sm text-white hover:text-gray-400 font-medium transition-colors"
                   >
                     Login
                   </Link>
 
                   <Link
                     href="/register"
-                    className="px-4 py-2 bg-[--primary] text-black rounded-md font-medium hover:bg-[--primary-hover] transition-colors shadow-sm"
+                    className="px-4 py-1 border border-white text-white rounded-md font-medium hover:bg-white hover:text-black transition-all"
                   >
                     Register
                   </Link>
@@ -77,7 +73,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
               <>
                 <Link
                   href="/post-service"
-                  className="flex items-center space-x-1 text-[--accent] hover:text-[--primary] font-medium transition-colors"
+                  className="flex items-center space-x-1 text-gray-300 hover:text-white font-medium transition-colors"
                 >
                   <PlusCircle size={18} />
                   <span>Post a Service</span>
@@ -85,15 +81,15 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
 
                 <Link
                   href="/messages"
-                  className="relative text-[--secondary] hover:text-[--primary] transition-colors"
+                  className="relative text-gray-300 hover:text-white transition-colors"
                 >
                   <MessageSquare size={22} />
-                  <span className="absolute -top-1 -right-1 bg-[--primary] text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
+                  <span className="absolute -top-1 -right-1 bg-white text-black text-[10px] w-4 h-4 flex items-center justify-center rounded-full">
                     2
                   </span>
                 </Link>
 
-                <button className="text-[--secondary] hover:text-[--primary] transition-colors">
+                <button className="text-gray-300 hover:text-white transition-colors">
                   <LogOut size={20} />
                 </button>
               </>
@@ -104,7 +100,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="p-2 text-[--pk-slate] hover:text-[--pk-red]"
+              className="p-2 text-white hover:text-gray-400"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -114,7 +110,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute w-full bg-white border-t border-gray-100 shadow-lg">
+        <div className="md:hidden absolute w-full bg-black border-t border-gray-800 shadow-lg">
           <div className="px-4 py-4 space-y-2">
             {[
               { name: "Home", path: "/" },
@@ -127,8 +123,8 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-3 py-3 rounded-md font-medium ${
                   pathname === item.path
-                    ? "bg-gray-100 text-[--primary]"
-                    : "text-[--pk-slate] hover:bg-gray-50"
+                    ? "bg-gray-800 text-white"
+                    : "text-gray-300 hover:bg-gray-900"
                 }`}
               >
                 {item.name}

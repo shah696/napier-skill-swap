@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  /* Semantic Brand Colors - Option A: Modern Trust */
-  --primary: #2563eb; /* Royal Blue */
-  --primary-hover: #1d4ed8;
-  --secondary: #1e293b; /* Slate Dark */
-  --accent: #0f766e; /* Teal - Retained for safety/trust indicators */
-  --background-soft: #f8fafc; /* Slate 50 */
-  --card-bg: #ffffff;
-
-  --background: #ffffff;
-  --foreground: #0f172a; /* Slate 900 */
+  /* Semantic Brand Colors - Dark Theme */
+  --primary: #ffffff;
+  --primary-hover: #e2e8f0;
+  --secondary: #9ca3af; /* Gray 400 for secondary text */
+  --accent: #14b8a6; /* Teal 500 */
+  --background: #000000;
+  --background-soft: #0a0a0a;
+  --foreground: #ffffff;
+  --card-bg: #111111;
+  --border: #1f2937; /* Gray 800 */
 }
 
 @theme {
@@ -22,11 +22,13 @@
   --color-secondary: var(--secondary);
   --color-accent: var(--accent);
   --color-background-soft: var(--background-soft);
+  --color-card-bg: var(--card-bg);
+  --color-border-dim: var(--border);
 }
 
 body {
-  background: var(--background-soft);
-  color: var(--secondary);
+  background: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

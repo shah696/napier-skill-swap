@@ -39,15 +39,13 @@ export default function Categories() {
   ];
 
   return (
-    <section className="py-16 bg-[--pk-gray-soft]">
+    <section className="py-16 bg-black border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-8">
-          <h2 className="text-2xl font-bold text-[--secondary]">
-            Browse by Category
-          </h2>
+          <h2 className="text-2xl font-bold text-white">Browse by Category</h2>
           <Link
             href="/browse"
-            className="text-[--primary] font-medium hover:underline text-sm"
+            className="text-gray-400 font-medium hover:text-white hover:underline text-sm transition-colors"
           >
             See all categories
           </Link>
@@ -58,14 +56,14 @@ export default function Categories() {
             <Link
               href={`/browse?category=${cat.name}`}
               key={idx}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md hover:border-[--pk-red] transition-all flex flex-col items-center justify-center text-center group"
+              className="bg-gray-900/50 p-6 rounded-xl border border-gray-800 shadow-sm hover:shadow-md hover:border-white transition-all flex flex-col items-center justify-center text-center group"
             >
               <div
                 className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 ${cat.color} group-hover:scale-110 transition-transform`}
               >
                 {cat.icon}
               </div>
-              <span className="font-semibold text-[--secondary] group-hover:text-[--primary] transition-colors">
+              <span className="font-semibold text-gray-200 group-hover:text-white transition-colors">
                 {cat.name}
               </span>
             </Link>

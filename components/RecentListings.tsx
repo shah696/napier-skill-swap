@@ -6,7 +6,7 @@ export default function RecentListings() {
     {
       title: "Python Programming Tutor for 1st Years",
       category: "Tutoring",
-      price: "PKR15/hr",
+      price: "£40",
       author: "James M.",
       type: "Hourly" as const,
     },
@@ -20,32 +20,32 @@ export default function RecentListings() {
     {
       title: "Need help installing Linux on Laptop",
       category: "Tech Help",
-      price: "Fixed PKR20",
+      price: "£20",
       author: "David K.",
       type: "Fixed" as const,
     },
     {
       title: "Graphic Design for Society Poster",
       category: "Design",
-      price: "Fixed PKR30",
+      price: "£30",
       author: "Emily R.",
       type: "Fixed" as const,
     },
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10">
           <div>
-            <h2 className="text-3xl font-bold text-[--secondary] mb-2">
+            <h2 className="text-3xl font-bold text-white mb-2">
               Recent Services
             </h2>
-            <p className="text-gray-500">See what's being offered right now.</p>
+            <p className="text-gray-400">See what's being offered right now.</p>
           </div>
           <Link
             href="/browse"
-            className="hidden sm:inline-block px-5 py-2.5 bg-white border border-gray-200 text-[--pk-slate] font-medium rounded-lg hover:bg-gray-50 transition-colors"
+            className="hidden sm:inline-block px-5 py-2.5 bg-gray-900 border border-gray-800 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
           >
             View All Services
           </Link>

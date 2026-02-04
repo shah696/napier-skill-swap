@@ -17,35 +17,35 @@ export default function ServiceCard({
   type,
 }: ServiceCardProps) {
   return (
-    <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col h-full">
+    <div className="bg-gray-900 rounded-xl border border-gray-800 shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col h-full group">
       <div className="p-5 flex-grow">
         <div className="flex justify-between items-start mb-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[--accent] bg-teal-50 px-2 py-1 rounded-md">
+          <span className="text-xs font-semibold uppercase tracking-wider text-teal-400 bg-teal-950/50 px-2 py-1 rounded-md border border-teal-900/50">
             {category}
           </span>
           <span
-            className={`text-xs font-bold px-2 py-1 rounded-md ${
+            className={`text-xs font-bold px-2 py-1 rounded-md border ${
               type === "Free"
-                ? "bg-green-100 text-green-700"
+                ? "bg-green-950/50 text-green-400 border-green-900/50"
                 : type === "Hourly"
-                  ? "bg-blue-100 text-blue-700"
-                  : "bg-orange-100 text-orange-700"
+                  ? "bg-blue-950/50 text-blue-400 border-blue-900/50"
+                  : "bg-orange-950/50 text-orange-400 border-orange-900/50"
             }`}
           >
             {price}
           </span>
         </div>
-        <h3 className="font-bold text-[--secondary] text-lg mb-2 line-clamp-2 hover:text-[--primary] cursor-pointer">
+        <h3 className="font-bold text-white text-lg mb-2 line-clamp-2 group-hover:text-gray-300 cursor-pointer transition-colors">
           {title}
         </h3>
-        <p className="text-sm text-gray-400 mb-4">Posted by {author}</p>
+        <p className="text-sm text-gray-500 mb-4">Posted by {author}</p>
       </div>
 
-      <div className="p-4 border-t border-gray-50 bg-gray-50/50 flex justify-between items-center">
-        <button className="text-sm font-medium text-[--secondary] hover:text-[--primary] transition-colors">
+      <div className="p-4 border-t border-gray-800 bg-gray-900/50 flex justify-between items-center text-gray-400 group-hover:text-white transition-colors">
+        <button className="text-sm font-medium hover:text-white transition-colors">
           View Details
         </button>
-        <div className="flex items-center text-xs text-gray-400">
+        <div className="flex items-center text-xs text-gray-500">
           <Clock size={14} className="mr-1" />
           <span>2d ago</span>
         </div>
