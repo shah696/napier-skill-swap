@@ -70,7 +70,7 @@ export default function SafetyPage() {
             </div>
           </section>
 
-          <section>
+          {/* <section>
             <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
               <AlertTriangle className="text-amber-500 mr-3" />
               Reporting Issues
@@ -82,7 +82,7 @@ export default function SafetyPage() {
             <button className="bg-white text-black px-6 py-3 rounded-lg font-medium hover:bg-gray-200 transition-colors">
               Report an Issue
             </button>
-          </section>
+          </section> */}
         </div>
       </div>
     </div>

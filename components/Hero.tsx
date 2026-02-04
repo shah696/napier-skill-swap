@@ -24,27 +24,29 @@ export default function Hero({ isLoggedIn = false }: HeroProps) {
               <div className="inline-block mb-4 px-4 py-1.5 bg-gray-900 text-white rounded-full text-sm font-semibold tracking-wide border border-gray-800">
                 Exclusive for Napier Students
               </div>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 tracking-tight leading-tight">
-                Find Help. Offer Skills. <br />
-                <span className="text-gray-400">Only for Napier.</span>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                Find Help. Offer Skills.{" "}
+                <span className="text-gray-400 block sm:inline mt-1 sm:mt-0">
+                  Only for Napier.
+                </span>
               </h1>
               <p className="text-xl md:text-1xl text-gray-400 mb-10 leading-relaxed">
                 Connect with fellow students for tutoring, CV reviews, tech
                 support, and more. A safe, trusted community built for your
                 university journey.
               </p>
-              <div className="flex flex-row items-center justify-center gap-4 w-full">
+              <div className="flex flex-row items-center justify-center gap-2 w-full max-w-sm mx-auto sm:max-w-none">
                 <Link
                   href="/browse"
-                  className="flex-1 sm:flex-none min-w-[180px] px-6 py-3 bg-white text-black rounded-lg font-semibold text-lg hover:bg-gray-200 transition-all shadow-md flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-none sm:min-w-[180px] px-3 py-2 sm:px-6 sm:py-3 bg-white text-black rounded-lg font-semibold text-xs sm:text-lg hover:bg-gray-200 transition-all shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap"
                 >
-                  <Search size={20} />
+                  <Search size={16} className="sm:w-5 sm:h-5" />
                   <span>Browse Services</span>
                 </Link>
 
                 <Link
                   href="/register"
-                  className="flex-1 sm:flex-none min-w-[180px] px-6 py-3 bg-transparent text-white border border-gray-700 rounded-lg font-semibold text-lg hover:bg-gray-900 transition-all shadow-sm flex items-center justify-center"
+                  className="flex-1 sm:flex-none sm:min-w-[180px] px-3 py-2 sm:px-6 sm:py-3 bg-transparent text-white border border-gray-700 rounded-lg font-semibold text-xs sm:text-lg hover:bg-gray-900 transition-all shadow-sm flex items-center justify-center whitespace-nowrap"
                 >
                   Join Community
                 </Link>

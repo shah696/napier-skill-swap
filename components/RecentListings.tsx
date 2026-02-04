@@ -37,11 +37,13 @@ export default function RecentListings() {
     <section className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-end mb-10">
-          <div>
-            <h2 className="text-3xl font-bold text-white mb-2">
+          <div className="max-w-xs sm:max-w-none">
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2 leading-tight">
               Recent Services
             </h2>
-            <p className="text-gray-400">See what's being offered right now.</p>
+            <p className="text-gray-400 text-sm sm:text-base">
+              See what's being offered right now.
+            </p>
           </div>
           <Link
             href="/browse"
@@ -60,7 +62,7 @@ export default function RecentListings() {
         <div className="mt-8 text-center sm:hidden">
           <Link
             href="/browse"
-            className="inline-block px-6 py-3 bg-white border border-gray-200 text-[--pk-slate] font-medium rounded-lg hover:bg-gray-50 transition-colors w-full"
+            className="inline-block px-6 py-3 bg-gray-900 border border-gray-800 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors w-full"
           >
             View All Services
           </Link>

@@ -33,7 +33,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
             <img
               src={logo.src}
               alt="Edinburgh Napier University"
-              className="h-15 w-auto"
+              className="h-10 sm:h-14 w-auto"
             />
           </Link>
 
@@ -108,31 +108,109 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
         </div>
       </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="md:hidden absolute w-full bg-black border-t border-gray-800 shadow-lg">
-          <div className="px-4 py-4 space-y-2">
-            {[
-              { name: "Home", path: "/" },
-              { name: "Browse Services", path: "/browse" },
-              { name: "Safety & Guidelines", path: "/safety" },
-            ].map((item) => (
-              <Link
-                key={item.path}
-                href={item.path}
+      {/* Mobile Menu Slider & Backdrop */}
+      <div
+        className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {/* Backdrop */}
+        <div
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          onClick={() => setIsMenuOpen(false)}
+        />
+
+        {/* Slider Drawer */}
+        <div
+          className={`absolute top-0 right-0 h-full w-[75%] max-w-[300px] bg-black border-l border-gray-800 shadow-2xl transition-transform duration-300 ease-in-out ${
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className="flex flex-col h-full">
+            {/* Header with Close Button */}
+            <div className="flex justify-between items-center p-4 border-b border-gray-800">
+              <span className="text-white font-bold">Menu</span>
+              <button
                 onClick={() => setIsMenuOpen(false)}
-                className={`block px-3 py-3 rounded-md font-medium ${
-                  pathname === item.path
-                    ? "bg-gray-800 text-white"
-                    : "text-gray-300 hover:bg-gray-900"
-                }`}
+                className="p-2 text-white hover:bg-gray-900 rounded-full transition-colors"
               >
-                {item.name}
-              </Link>
-            ))}
+                <X size={24} />
+              </button>
+            </div>
+
+            {/* Menu Links */}
+            <div className="px-4 py-5 grow space-y-3">
+              {[
+                { name: "Home", path: "/" },
+                { name: "Browse Services", path: "/browse" },
+                { name: "Safety & Guidelines", path: "/safety" },
+              ].map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    pathname === item.path
+                      ? "bg-white text-black"
+                      : "text-gray-300 hover:bg-gray-900 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+
+              <div className="pt-5 mt-5 border-t border-gray-800 flex flex-col space-y-2.5">
+                {!isLoggedIn ? (
+                  <>
+                    <Link
+                      href="/login"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center justify-center px-4 py-2.5 bg-gray-900 text-white border border-gray-800 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors"
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      href="/register"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center justify-center px-4 py-2.5 bg-white text-black rounded-lg text-sm font-bold hover:bg-gray-100 transition-colors"
+                    >
+                      Register
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/post-service"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center space-x-3 px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      <PlusCircle size={18} />
+                      <span>Post a Service</span>
+                    </Link>
+                    <Link
+                      href="/messages"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="flex items-center space-x-3 px-4 py-2 text-gray-300 hover:text-white hover:bg-gray-900 rounded-lg text-sm font-medium transition-colors"
+                    >
+                      <MessageSquare size={18} />
+                      <span>Messages</span>
+                    </Link>
+                    <button
+                      className="flex items-center space-x-3 px-4 py-2 text-gray-300 hover:text-red-400 hover:bg-red-950/20 rounded-lg text-sm font-medium transition-colors w-full text-left"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <LogOut size={18} />
+                      <span>Log Out</span>
+                    </button>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
