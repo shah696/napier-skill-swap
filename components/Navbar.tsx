@@ -147,7 +147,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
         >
           <div className="flex flex-col h-full">
             {/* Header with Close Button */}
-            <div className="flex justify-between items-center p-4 border-b border-gray-800">
+            <div className="flex justify-between items-center p-4 border-b border-white">
               <span className="text-white font-bold">Menu</span>
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -171,7 +171,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
                   className={`block px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     pathname === item.path
                       ? "bg-white text-black"
-                      : "text-gray-300 hover:bg-gray-900 hover:text-white"
+                      : "text-gray-300 hover:bg-gray-900 hover:text-white border border-white "
                   }`}
                 >
                   {item.name}

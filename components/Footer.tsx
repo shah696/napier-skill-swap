@@ -3,12 +3,12 @@ import { ShieldCheck } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0b252c] border-t-4 border-[#b30333] py-12 mt-auto">
+    <footer className="bg-[#0b252c] border-t-4 border-[#fe2959] py-12 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand & Mission */}
           <div>
-            <h3 className="text-xl font-bold text-[#b30333] mb-4">
+            <h3 className="text-xl font-bold text-[#fe2959] mb-4">
               Napier SkillSwap
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">
@@ -52,7 +52,7 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-gray-300 mb-4">Trust & Safety</h4>
             <div className="flex items-start space-x-3 text-sm text-gray-400">
-              <ShieldCheck className="w-5 h-5 text-[#b30333] flex-shrink-0 mt-0.5" />
+              <ShieldCheck className="w-5 h-5 text-[#fe2959] flex-shrink-0 mt-0.5" />
               <p>
                 Napier SkillSwap does not process payments. All arrangements are
                 made privately between students.
