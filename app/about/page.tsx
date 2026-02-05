@@ -6,7 +6,9 @@ import {
   GraduationCap,
   Heart,
   Zap,
+  Search,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -156,19 +158,22 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold mb-8">
             Ready to join the community?
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+
+          <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 w-full max-w-sm mx-auto sm:max-w-none">
+            <Link
               href="/register"
-              className="px-8 py-4 bg-[#fe295a] text-white rounded-xl font-bold hover:bg-[#e0244e] transition-all transform hover:scale-105"
+              className="flex-1 sm:flex-none sm:min-w-[200px] px-5 py-3.5 sm:px-8 sm:py-4 bg-[#fe295a] hover:bg-[#e0244e] text-white rounded-xl font-bold text-sm sm:text-lg transition-all shadow-lg flex items-center justify-center gap-2 whitespace-nowrap"
             >
-              Create your account
-            </a>
-            <a
+              {/* <Search size={18} className="sm:w-6 sm:h-6" /> */}
+              <span> Create your account</span>
+            </Link>
+
+            <Link
               href="/browse"
-              className="px-8 py-4 bg-white text-black rounded-xl font-bold hover:bg-gray-200 transition-all transform hover:scale-105"
+              className="flex-1 sm:flex-none sm:min-w-[200px] px-5 py-3.5 sm:px-8 sm:py-4 bg-transparent text-white border-2 border-white/20 rounded-xl font-bold text-sm sm:text-lg hover:bg-white hover:text-black hover:border-white transition-all shadow-sm flex items-center justify-center whitespace-nowrap"
             >
-              Browse Services
-            </a>
+              Join Community
+            </Link>
           </div>
         </div>
       </div>
