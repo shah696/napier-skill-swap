@@ -60,6 +60,10 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
               Home
             </Link>
 
+            <Link href="/about" className={navItemClass("/about")}>
+              About
+            </Link>
+
             <Link href="/browse" className={navItemClass("/browse")}>
               Browse Services
             </Link>
@@ -161,6 +165,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
             <div className="px-4 py-5 grow space-y-3">
               {[
                 { name: "Home", path: "/" },
+                { name: "About", path: "/about" },
                 { name: "Browse Services", path: "/browse" },
                 { name: "Safety & Guidelines", path: "/safety" },
               ].map((item) => (

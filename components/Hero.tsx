@@ -21,12 +21,12 @@ export default function Hero({ isLoggedIn = false }: HeroProps) {
           {!isLoggedIn ? (
             /* Logged Out View */
             <>
-              <div className="inline-block mb-4 px-4 py-1.5 bg-gray-900 text-white rounded-full text-sm font-semibold tracking-wide border border-gray-800">
+              <div className="inline-block mb-4 px-4 py-1.5 bg-gray-900 text-[#fe295a] rounded-full text-sm font-semibold tracking-wide border border-gray-800">
                 Exclusive for Napier Students
               </div>
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
                 Find Help. Offer Skills.{" "}
-                <span className="text-gray-400 block sm:inline mt-1 sm:mt-0">
+                <span className="text-[#fe295a] block sm:inline mt-1 sm:mt-0">
                   Only for Napier.
                 </span>
               </h1>
