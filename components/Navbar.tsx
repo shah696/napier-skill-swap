@@ -31,23 +31,26 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center group transition-all duration-300"
+            className="flex items-center pl-3 sm:pl-0 gap-1 sm:gap-2 group transition-all duration-300"
           >
-            <div className="flex items-center pl-3 sm:pl-0">
-              <span className="text-white font-black text-xl sm:text-2xl tracking-tighter uppercase mr-1">
+            {/* Text Logo */}
+            <div className="flex flex-col leading-none">
+              <span className="text-white font-black text-lg sm:text-xl tracking-tight uppercase">
                 Napier
               </span>
-              {/* <span className="text-gray-400 font-light text-xl sm:text-2xl tracking-tighter uppercase mr-3 sm:mr-4">
+              <span className="text-gray-400 font-medium text-sm sm:text-base tracking-tight uppercase">
                 Skillswap
-              </span> */}
+              </span>
             </div>
 
-            <div className="h-6 w-[2px] bg-white/20 mr-3 sm:mr-4 hidden xs:block"></div>
+            {/* Divider */}
+            <div className="h-7 w-[2px] bg-white/20 hidden xs:block"></div>
 
+            {/* Image Logo */}
             <img
               src={logo.src}
               alt="Edinburgh Napier University"
-              className="h-8 sm:h-11 w-auto brightness-110 group-hover:scale-105 transition-transform duration-300 "
+              className="h-10 sm:h-12 w-auto brightness-110 group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
