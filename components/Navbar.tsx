@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import logo from "./assets/logo.jpeg";
+import logo from "./assets/logo-3.png";
 
 import { useState } from "react";
 import { usePathname } from "next/navigation";
@@ -25,15 +25,29 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
     }`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800 shadow-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0f2f3e] border-b border-gray-800 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-15">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link
+            href="/"
+            className="flex items-center group transition-all duration-300"
+          >
+            <div className="flex items-center">
+              <span className="text-white font-black text-xl sm:text-2xl tracking-tighter uppercase mr-1">
+                Napier
+              </span>
+              {/* <span className="text-gray-400 font-light text-xl sm:text-2xl tracking-tighter uppercase mr-3 sm:mr-4">
+                Skillswap
+              </span> */}
+            </div>
+
+            <div className="h-6 w-[2px] bg-white/20 mr-3 sm:mr-4 hidden xs:block"></div>
+
             <img
               src={logo.src}
               alt="Edinburgh Napier University"
-              className="h-10 sm:h-14 w-auto"
+              className="h-8 sm:h-11 w-auto brightness-110 group-hover:scale-105 transition-transform duration-300 "
             />
           </Link>
 

@@ -35,18 +35,18 @@ export default function Hero({ isLoggedIn = false }: HeroProps) {
                 support, and more. A safe, trusted community built for your
                 university journey.
               </p>
-              <div className="flex flex-row items-center justify-center gap-2 w-full max-w-sm mx-auto sm:max-w-none">
+              <div className="flex flex-row items-center justify-center gap-2 sm:gap-4 w-full max-w-sm mx-auto sm:max-w-none">
                 <Link
                   href="/browse"
-                  className="flex-1 sm:flex-none sm:min-w-[180px] px-3 py-2 sm:px-6 sm:py-3 bg-white text-black rounded-lg font-semibold text-xs sm:text-lg hover:bg-gray-200 transition-all shadow-md flex items-center justify-center gap-1.5 whitespace-nowrap"
+                  className="flex-1 sm:flex-none sm:min-w-[200px] px-5 py-3.5 sm:px-8 sm:py-4 bg-white text-black rounded-xl font-bold text-sm sm:text-lg hover:bg-gray-200 transition-all shadow-lg flex items-center justify-center gap-2 whitespace-nowrap"
                 >
-                  <Search size={16} className="sm:w-5 sm:h-5" />
+                  <Search size={18} className="sm:w-6 sm:h-6" />
                   <span>Browse Services</span>
                 </Link>
 
                 <Link
                   href="/register"
-                  className="flex-1 sm:flex-none sm:min-w-[180px] px-3 py-2 sm:px-6 sm:py-3 bg-transparent text-white border border-gray-700 rounded-lg font-semibold text-xs sm:text-lg hover:bg-gray-900 transition-all shadow-sm flex items-center justify-center whitespace-nowrap"
+                  className="flex-1 sm:flex-none sm:min-w-[200px] px-5 py-3.5 sm:px-8 sm:py-4 bg-transparent text-white border-2 border-white/20 rounded-xl font-bold text-sm sm:text-lg hover:bg-white hover:text-black hover:border-white transition-all shadow-sm flex items-center justify-center whitespace-nowrap"
                 >
                   Join Community
                 </Link>
