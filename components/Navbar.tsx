@@ -26,14 +26,14 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0f2f3e] border-b border-gray-800 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-1 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-15">
           {/* Logo */}
           <Link
             href="/"
             className="flex items-center group transition-all duration-300"
           >
-            <div className="flex items-center">
+            <div className="flex items-center pl-3 sm:pl-0">
               <span className="text-white font-black text-xl sm:text-2xl tracking-tighter uppercase mr-1">
                 Napier
               </span>
@@ -114,7 +114,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="p-2 text-white hover:text-gray-400"
+              className="p-2 text-white  hover:text-gray-400"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -124,7 +124,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
 
       {/* Mobile Menu Slider & Backdrop */}
       <div
-        className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0  z-50 md:hidden transition-opacity duration-300 ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -138,7 +138,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
 
         {/* Slider Drawer */}
         <div
-          className={`absolute top-0 right-0 h-full w-[75%] max-w-[300px] bg-black border-l border-gray-800 shadow-2xl transition-transform duration-300 ease-in-out ${
+          className={`absolute top-0 right-0 h-full w-[75%] max-w-[300px] bg-[#0f2f3e] border-l border-black shadow-2xl transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
